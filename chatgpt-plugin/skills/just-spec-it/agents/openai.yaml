@@ -1,0 +1,4 @@
+interface:
+  display_name: "Just Spec It"
+  short_description: "Turn one requirement into six lean planning documents"
+  default_prompt: "Create a complete six-document implementation spec for my requirement."

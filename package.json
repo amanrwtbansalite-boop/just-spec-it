@@ -1,0 +1,109 @@
+{
+  "name": "just-spec-it",
+  "displayName": "Just Spec It",
+  "description": "One requirement in, six focused planning docs out, using the AI model already available in your editor.",
+  "version": "0.2.0",
+  "publisher": "amanrwt",
+  "license": "MIT",
+  "icon": "images/icon.png",
+  "galleryBanner": {
+    "color": "#111827",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/amanrwtbansalite-boop/just-spec-it.git"
+  },
+  "homepage": "https://github.com/amanrwtbansalite-boop/just-spec-it#readme",
+  "bugs": {
+    "url": "https://github.com/amanrwtbansalite-boop/just-spec-it/issues"
+  },
+  "engines": {
+    "vscode": "^1.100.0",
+    "node": ">=22"
+  },
+  "categories": [
+    "Machine Learning",
+    "Education",
+    "Other"
+  ],
+  "keywords": [
+    "spec",
+    "specification",
+    "spec-driven development",
+    "requirements",
+    "architecture",
+    "planning",
+    "docs",
+    "ai",
+    "copilot",
+    "openai",
+    "cursor",
+    "windsurf"
+  ],
+  "activationEvents": [],
+  "main": "./dist/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "justSpecIt.generate",
+        "title": "Just Spec It: Generate Spec Docs",
+        "category": "Just Spec It"
+      },
+      {
+        "command": "justSpecIt.updateFile",
+        "title": "Just Spec It: Update Spec Docs",
+        "category": "Just Spec It"
+      },
+      {
+        "command": "justSpecIt.configureApiKey",
+        "title": "Just Spec It: Set or Clear Fallback API Key",
+        "category": "Just Spec It"
+      }
+    ],
+    "configuration": {
+      "title": "Just Spec It",
+      "properties": {
+        "justSpecIt.baseUrl": {
+          "type": "string",
+          "default": "https://api.openai.com/v1",
+          "description": "OpenAI-compatible base URL for the fallback provider (e.g. https://openrouter.ai/api/v1 or http://localhost:11434/v1 for Ollama)."
+        },
+        "justSpecIt.model": {
+          "type": "string",
+          "default": "gpt-4o-mini",
+          "description": "Model name for the fallback provider."
+        },
+        "justSpecIt.outputDir": {
+          "type": "string",
+          "default": "docs",
+          "description": "Workspace-relative folder where the generated MD files are written. The path must stay inside the workspace."
+        },
+        "justSpecIt.previewContext": {
+          "type": "boolean",
+          "default": true,
+          "description": "Show an editable preview of the project context before sending it to the selected AI model."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run package",
+    "compile": "npm run check-types && node esbuild.js",
+    "check-types": "tsc --noEmit",
+    "test": "node esbuild.test.js && node --test .test-dist/tests.cjs",
+    "watch": "npm-run-all -p watch:*",
+    "watch:esbuild": "node esbuild.js --watch",
+    "watch:tsc": "tsc --noEmit --watch --project tsconfig.json",
+    "package": "npm run check-types && node esbuild.js --production",
+    "vsix": "vsce package"
+  },
+  "devDependencies": {
+    "@types/node": "^20.14.0",
+    "@types/vscode": "^1.100.0",
+    "@vscode/vsce": "^3.1.0",
+    "esbuild": "^0.25.0",
+    "npm-run-all": "^4.1.5",
+    "typescript": "^5.5.4"
+  }
+}

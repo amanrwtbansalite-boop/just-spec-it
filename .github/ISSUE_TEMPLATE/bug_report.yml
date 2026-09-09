@@ -1,0 +1,55 @@
+name: Bug report
+description: Report a reproducible problem with Just Spec It.
+title: "[Bug]: "
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Thanks for helping improve Just Spec It. Remove private project details and secrets before submitting.
+  - type: input
+    id: version
+    attributes:
+      label: Extension version
+      placeholder: 0.2.0
+    validations:
+      required: true
+  - type: input
+    id: editor
+    attributes:
+      label: Editor and version
+      placeholder: VS Code 1.100.0
+    validations:
+      required: true
+  - type: input
+    id: provider
+    attributes:
+      label: Model provider type
+      placeholder: VS Code language model, OpenAI-compatible API, or localhost
+    validations:
+      required: true
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      description: Give a minimal, numbered reproduction.
+    validations:
+      required: true
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected behavior
+    validations:
+      required: true
+  - type: textarea
+    id: actual
+    attributes:
+      label: Actual behavior and sanitized logs
+    validations:
+      required: true
+  - type: checkboxes
+    id: safety
+    attributes:
+      label: Safety check
+      options:
+        - label: I removed API keys, private requirements, and proprietary project content.
+          required: true

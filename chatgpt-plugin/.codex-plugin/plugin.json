@@ -1,0 +1,24 @@
+{
+  "name": "just-spec-it",
+  "version": "0.2.0",
+  "description": "Turn one software requirement into six coordinated planning documents.",
+  "author": {
+    "name": "amanrwt"
+  },
+  "license": "MIT",
+  "keywords": ["specification", "requirements", "architecture", "planning", "software-development"],
+  "skills": "./skills/",
+  "interface": {
+    "displayName": "Just Spec It",
+    "shortDescription": "One requirement in, six focused planning documents out.",
+    "longDescription": "Create or update a lean, coordinated set of requirements, architecture, phase plan, decisions, implementation tasks, and durable project memory using the context available in ChatGPT or Codex.",
+    "developerName": "amanrwt",
+    "category": "Productivity",
+    "capabilities": ["Write"],
+    "defaultPrompt": [
+      "Create six planning docs for this software requirement.",
+      "Update my existing spec docs to reflect this change.",
+      "Turn this attached requirement into an implementation plan."
+    ]
+  }
+}
